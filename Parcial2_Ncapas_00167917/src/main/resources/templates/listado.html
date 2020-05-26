@@ -30,42 +30,34 @@
 </head>
 <body>
 	<div class="container-contact100" style="background-image: url('images/bg-01.jpg');">
-	<table class="table table-sm table-dark">
-		<thead>
-			<th scope="col">Codigo</th>
-			<th scope="col">Titulo</th>
-			<th scope="col">Autor</th>
-			<th scope="col">ISBN</th>
-			<th scope="col">Categoria</th>
-			<th scope="col">Fecha ingreso</th>
-			<th scope="col">Estado</th>
-		</thead>
-		<th:block th:each="e, row: ${libros}">
-			<tr>
-				
-					<td class="bg-primary" th:text="${e.codigo}"/>
-					<td class="bg-primary" th:text="${e.titulo}"/>
-					<td class="bg-primary" th:text="${e.autor}"/>
-					<td class="bg-primary" th:text="${e.isbn}"/>
-					<td class="bg-primary" th:text="${e.categoria.categoria}"/>
-					<td class="bg-primary" th:text="${#dates.format(e.fecha, 'dd/MMM/yyyy hh:mm')}"/>
-					<td class="bg-primary" th:text="${e.estadoDelegate}"/>
-				
-			</tr>
-		</th:block>
-	</table>
+		<div class="wrap-contact100">
+			<table class="table table-sm table-dark">
+				<thead>
+					<th scope="col">Codigo</th>
+					<th scope="col">Titulo</th>
+					<th scope="col">Autor</th>
+					<th scope="col">ISBN</th>
+					<th scope="col">Categoria</th>
+					<th scope="col">Fecha ingreso</th>
+					<th scope="col">Estado</th>
+				</thead>
+				<th:block th:each="e, row: ${libros}">
+					<tr>
+						
+							<td th:text="${e.codigo}"/>
+							<td th:text="${e.titulo}"/>
+							<td th:text="${e.autor}"/>
+							<td th:text="${e.isbn}"/>
+							<td th:text="${e.categoria.categoria}"/>
+							<td th:text="${#dates.format(e.fecha, 'dd/MMM/yyyy hh:mm')}"/>
+							<td th:text="${e.estadoDelegate}"/>
+						
+					</tr>
+				</th:block>
+			</table>
 	
-	<form class="contact100-form" method="post" th:action="@{/deleteLibro}">
-	<div class="wrap-contact100">
-					<span class="contact100-form-title"> Eliminar Libro </span>
-					<input type="text"  placeholder="Codigo del Libro" id="codigo" name="codigo">
-					<input type="submit" class="btn btn-outline-light" value="eliminar Libro">
-					</div>
-	</form>
-	
-	<br>
-	<br>
-	<button class="btn btn-outline-light"><a href="/index" style="text-decoration:none; color: #000;">Volver</a></button>
+		<a class="contact100-more" href="/index" style="text-decoration:none; color: #000;">Volver</a>
+		</div>
 	</div>
 </body>
 </html>
