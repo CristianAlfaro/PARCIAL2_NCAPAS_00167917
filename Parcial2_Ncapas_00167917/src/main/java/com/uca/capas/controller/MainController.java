@@ -46,7 +46,7 @@ public class MainController {
 		return mav;
 	}
 	
-	@PostMapping("/newCategoria")
+	@PostMapping("/nuevaCategoria")
 	public ModelAndView newCategoria(@Valid @ModelAttribute Categoria categoria, BindingResult result) {
 		
 		ModelAndView mav = new ModelAndView(); 
@@ -67,7 +67,7 @@ public class MainController {
 		return mav;
 	}
 	
-	@RequestMapping("/igresarLibro")
+	@RequestMapping("/ingresarLibro")
 	public ModelAndView ingresarLibro() {
 		ModelAndView mav = new ModelAndView();
 		List<Categoria> categorias = null;
@@ -82,7 +82,7 @@ public class MainController {
 		return mav;
 	}
 	
-	@PostMapping("/newLibro")
+	@PostMapping("/nuevoLibro")
 	public ModelAndView newLibro(@Valid @ModelAttribute Libro libro, BindingResult result) {
 		
 		ModelAndView mav = new ModelAndView();
@@ -106,20 +106,6 @@ public class MainController {
 		return mav;
 	}
 	
-	@RequestMapping("/deleteLibro")
-	public String deleteLibro(@RequestParam Integer codigo) {
-		Libro libro = libroService.findOne(codigo);
-			try {
-				
-				libroService.delete(libro);
-				
-			}catch (Exception e) {
-				e.printStackTrace();
-			}
-			
-		return "redirect:/listado";
-		
-	}
 	
 	@RequestMapping("/listado")
 	public ModelAndView listado() {

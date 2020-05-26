@@ -32,30 +32,26 @@
 
 	<div class="container-contact100" style="background-image: url('images/bg-01.jpg');">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" th:action="@{/newLibro}" th:object="${libro}" method="post">
+			<form class="contact100-form validate-form" th:action="@{/nuevoLibro}" th:object="${libro}" method="post">
 				<span class="contact100-form-title"> Nuevo Libro </span>
 				
 				<div class="wrap-input100 rs1-wrap-input100 validate-input fullsize"
 					data-validate="Titulo is required">
-					<span class="label-input100" th:errors="*{titulo}"
-						style="color: #FF0000; font-size: 12px"></span> <input
-						class="input100" th:field="*{titulo}" type="text" name="titulo"
-						placeholder="titulo">
+					<span class="label-input100" th:errors="*{titulo}"></span> 
+					<input class="input100" th:field="*{titulo}" type="text" name="titulo"
+						placeholder="Titulo">
 				</div>
 				
-				<div class="wrap-input100 rs1-wrap-input100 validate-input fullsize"
-					data-validate="Autor is required">
-					<span class="label-input100" th:errors="*{autor}"
-						style="color: #FF0000; font-size: 12px"></span> <input
-						class="input100" th:field="*{autor}" type="text" name="autor"
-						placeholder="autor">
+				<div class="wrap-input100 rs1-wrap-input100 validate-input fullsize" data-validate="Autor is required">
+					<span class="label-input100" th:errors="*{autor}"></span> 
+					<input class="input100" th:field="*{autor}" type="text" name="autor"
+						placeholder="Autor">
 				</div>
 				
 				<div class="wrap-input100 rs1-wrap-input100 validate-input fullsize"
 					data-validate="ISBN is required">
-					<span class="label-input100" th:errors="*{isbn}"
-						style="color: #FF0000; font-size: 12px"></span> <input
-						class="input100" th:field="*{isbn}" type="text" name="isbn"
+					<span class="label-input100" th:errors="*{isbn}"></span> 
+					<input class="input100" th:field="*{isbn}" type="text" name="isbn"
 						placeholder="ISBN">
 				</div>
 				

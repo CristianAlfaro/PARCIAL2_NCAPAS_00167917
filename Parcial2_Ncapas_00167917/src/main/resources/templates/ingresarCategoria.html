@@ -14,15 +14,14 @@
 
 	<div class="container-contact100" style="background-image: url('images/bg-01.jpg');">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" th:action="@{/newCategoria}" th:object="${categoria}" method="post">
+			<form class="contact100-form validate-form" th:action="@{/nuevaCategoria}" th:object="${categoria}" method="post">
 				<span class="contact100-form-title"> Nueva Categoria </span>
 					
 				<div class="wrap-input100 rs1-wrap-input100 validate-input fullsize"
 					data-validate="Name is required">
-					<span class="label-input100" th:errors="*{categoria}"
-						style="color: #FF0000; font-size: 12px"></span> <input
-						class="input100" th:field="*{categoria}" type="text" name="categoria"
-						placeholder="Nombre Categoria">
+					<span class="label-input100" th:errors="*{categoria}"></span> 
+					<input class="input100" th:field="*{categoria}" type="text" name="categoria"
+						placeholder="Nombre de la Categoria">
 				</div>
 				
 				<input type="submit" class="btn btn-outline-light contact100-form-btn " value="Guardar Categoria">
